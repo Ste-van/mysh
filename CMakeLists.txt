@@ -6,6 +6,8 @@ project(mysh
 )
 
 add_executable(mysh
+    src/main.c
+    src/shell.h
 )
 
 set_target_properties(mysh PROPERTIES
