@@ -10,6 +10,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 add_executable(mysh
     src/main.c
     src/shell.c
+    src/hash_table.c
 )
 
 set_target_properties(mysh PROPERTIES
