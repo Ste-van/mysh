@@ -1,8 +1,5 @@
-#define _POSIX_C_SOURCE 200809L
+#include <shell.h>
 
 int main(void) {
-
-
-
-    return 0;
+    return shell_run_repl();
 }

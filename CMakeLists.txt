@@ -5,9 +5,11 @@ project(mysh
     LANGUAGES C
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 add_executable(mysh
     src/main.c
-    src/shell.h
+    src/shell.c
 )
 
 set_target_properties(mysh PROPERTIES
@@ -17,6 +19,8 @@ set_target_properties(mysh PROPERTIES
 )
 
 target_include_directories(mysh PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+target_compile_definitions(mysh PRIVATE _POSIX_C_SOURCE=200809L)
 
 if(CMAKE_C_COMPILER_ID MATCHES "GNU|Clang")
     target_compile_options(mysh PRIVATE
