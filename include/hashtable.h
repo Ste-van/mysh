@@ -4,6 +4,28 @@
 #include <stddef.h>
 #include <stdbool.h>
 
+/****************************************************************************************
+ *
+ *  WARNING: Gemini suggested me to use a hashtable for the built-in commands.
+ *           Then I spent 4 hours implementing this hashtable just to hear
+ *           from Gemini that I was supposed to use a static array for built-ins.
+ *
+ *           Then I spent 2 hours during lectures refactoring the implementation so
+ *           that it serves the real purpose of a hashtable in a shell.
+ *
+ *           The refactoring was done in a moment of rage (I hate wasting time)
+ *           so I'm not real sure about the correctness of the implementation.
+ *
+ *           I will surely revise this code when i will need it.
+ *
+ *  The hashtable will be used to:
+ *  - manage shell/environment variables
+ *  - hash built-in command
+ *  - aliases
+ *  - shell functions
+ *
+*****************************************************************************************/
+
 typedef void (*hashtable_free_fn)(void *value);
 typedef void (*hashtable_iter_fn)(const char *key, void *value, void *ctx);
 
